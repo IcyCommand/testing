@@ -1,1 +1,4 @@
-(Get-ADForest -Current LoggedOnUser).Domains | %{ Get-ADDefaultDomainPasswordPolicy -Identity $_ }
+Get-ADFineGrainedPasswordPolicy -Filter * | 
+Select Name, AppliesTo, MinPasswordLength, MinPasswordAge, MaxPasswordAge, PasswordHistoryCount, 
+ComplexityEnabled, ReversibleEncryptionEnabled, LockoutThreshold, LockoutDuration, LockoutObservationWindow |
+Format-Table
