@@ -1,4 +1,1 @@
-Get-ADFineGrainedPasswordPolicy -Filter * | 
-Select Name, AppliesTo, MinPasswordLength, MinPasswordAge, MaxPasswordAge, PasswordHistoryCount, 
-ComplexityEnabled, ReversibleEncryptionEnabled, LockoutThreshold, LockoutDuration, LockoutObservationWindow |
-Format-Table
+Get-ADObject 'CN=ms-mcs-admpwd,CN=Schema,CN=Configuration,DC=testad,DC=local'
